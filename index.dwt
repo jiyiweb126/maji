@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>南鹿实业</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="assets/css/index-prod.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style1.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/head.css" />
+    <link rel="stylesheet" href="assets/css/style4.css">
+    <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexisel.js"></script>
+
+</head>
+<body>
+{include file="inc/header.tpl"}
+    <div>
+        <div id="myCarousel" class="carousel slide">
+           <ol class="carousel-indicators">
+              <!-- {foreach from=$listflash name=listflashs item=listflashx} -->
+              <li data-target="#myCarousel" data-slide-to="{$smarty.foreach.listflashs.index}"></li>
+              <!-- {/foreach} -->
+           </ol>
+           <div class="carousel-inner">
+             <!-- {foreach from=$listflash name=listflashs item=listflashx} -->
+             {if $smarty.foreach.listflashs.first}<div class="item active">{else}<div class="item">{/if}
+                 <img src="{$listflashx.image}" alt="Second slide">
+              </div>
+              <!-- {/foreach} -->
+           </div>
+           <a class="carousel-control left" href="#myCarousel"
+              data-slide="prev"></a>
+           <a class="carousel-control right" href="#myCarousel"
+              data-slide="next"></a>
+        </div>
+    </div>
+    <div class="notice">
+        <div class="container">
+        <!-- {foreach from=$getshowlistgonggao name=getshowlistgong item=getshowlistgon} -->
+           <span></span> <p class="no-bo">[ {$getshowlistgon.add_time} ]&nbsp;&nbsp;   
+           <a href="details.php?id={$getshowlistgon.id}">{$getshowlistgon.title}</a>
+           <!-- {/foreach} -->
+           </p>
+        </div>
+    </div>
+    <div class="company">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 about">
+                    <h2><span class="icon"></span>关于我们 <span class="two-tit">Company</span><em><a href="about.html"></a></em></h2>
+                    <div class="border"><img src="assets/img/com.png" alt="" /></div>
+                    <p class="padd-top"><a href="about.html">   作为经营的企业，我们始终坚持诚信和让利于客户，坚持用自己的服务去打动客户。我们公司是在...</a></p>
+                </div>
+                <div class="col-md-4 new">
+                     <h2><span class="icon icon1"></span>新闻中心<span class="two-tit">&nbsp;News</span><em><a href="news.html"></a></em></h2>
+                     <ul id="myTab" class="nav nav-tabs my-tab l_tab">
+                       <li class="active">
+                          <a href="#ho" data-toggle="tab">
+                             公司新闻
+                          </a>
+                       </li>
+                       <li><a href="#ho1" data-toggle="tab">行业动态</a></li>
+                       <li><a href="#ho2" data-toggle="tab">促销活动</a></li>
+                       <li><a href="#ho3" data-toggle="tab">最新聚焦</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                    
+                       <div class="tab-pane fade in active" id="ho">
+                            <div class="news-fl">
+                              <!-- {foreach from=$getshowlistnews1 name=getshowlistnews1x item=getshowlistnews1y} -->
+                              <li style="line-height:26px;font-size:14px;"><a href="details.php?id={$getshowlistnews1y.id}" target="_blank" class="col-md">{$getshowlistnews1y.title}</a></li>
+                              <!-- {/foreach} -->
+                            </div>
+                       </div>
+                       
+                       <div class="tab-pane fade" id="ho1">
+                           <div class="news-fl">
+                              <!-- {foreach from=$getshowlistnews2 name=getshowlistnews2x item=getshowlistnews2y} -->
+                              <li style="line-height:26px;font-size:14px;"><a href="details.php?id={$getshowlistnews2y.id}" target="_blank" class="col-md">{$getshowlistnews2y.title}</a></li>
+                              <!-- {/foreach} -->
+                            </div>
+                       </div>
+                       <div class="tab-pane fade" id="ho2">
+                           <div class="news-fl">
+                              <!-- {foreach from=$getshowlistnews3 name=getshowlistnews3x item=getshowlistnews3y} -->
+                              <li style="line-height:26px;font-size:14px;"><a href="details.php?id={$getshowlistnews3y.id}" target="_blank" class="col-md">{$getshowlistnews3y.title}</a></li>
+                              <!-- {/foreach} -->
+                            </div>
+                       </div>
+                       <div class="tab-pane fade" id="ho3">
+                           <div class="news-fl">
+                              <!-- {foreach from=$getshowlistnews4 name=getshowlistnews4x item=getshowlistnews4y} -->
+                              <li style="line-height:26px;font-size:14px;"><a href="details.php?id={$getshowlistnews4y.id}" target="_blank" class="col-md">{$getshowlistnews4y.title}</a></li>
+                              <!-- {/foreach} -->
+                            </div>
+                       </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-4 quick">
+                     <h2><span class="icon icon2"></span>快速入口 <span class="two-tit">Quick</span><em><a href="nanlunews.php"></a></em></h2>
+                    <div class="col-md-12 col-xs-12">
+                     <img src="assets/img/quick1.png" alt="" />
+                     <a href="https://shop110077439.taobao.com/"><img src="assets/img/quick-1.png" alt="" /></a>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                     <img src="assets/img/quick2.png" alt="" />
+                     <a href="xiaoshou.php?id=24"><img src="assets/img/quick-2.png" alt="" /></a>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                     <img src="assets/img/quick3.png" alt="" />
+                     <a href="shuiguo.php"><img src="assets/img/quick-3.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        <div class="container">
+            <div class="produ">
+                 <h2><span class="icon icon3"></span>产品展厅 <span class="two-tit">Product</span><em><a href="productcat.php"></a></em></h2>
+                 <ul id="flexiselDemo3" class="produ-con">
+                  <!-- {foreach from=$getshowlistchanping name=getshowlistchanp item=getshowlistchp} -->
+                     <li><a href="product.php?id={$getshowlistchp.id}"><img src="{$getshowlistchp.image}"  alt="" /></a><h6>{$getshowlistchp.name|truncate:10:""}</a></h6></li>
+				<!-- {/foreach} -->
+                 </ul>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-4 about">
+                    <h2>最新成果<span class="two-tit">&nbsp;last word</span></h2>
+                    <div class="sub_box">
+                        <div id="wrapper"><!-- 最外层部分 -->
+                            <div id="banner"><!-- 轮播部分 -->
+                                <ul class="imgList"><!-- 图片部分 -->
+                                    <!-- {foreach from=$getshowlistresult name=getshowlistresults item=getshowlistres} -->
+                                    <li><a href="details.php?id={$getshowlistres.id}"><img src="{$getshowlistres.image}" width="365px" height="200px" alt="puss in boots2"></a></li>
+                                    <!-- {/foreach} -->
+                                </ul>
+
+                                <div class="bg"></div> <!-- 图片底部背景层部分-->
+                                <ul class="infoList"><!-- 图片左下角文字信息部分 -->
+                                    <li class="infoOn">南鹿莲雾花茶</li>
+                                    <li>莲雾花茶</li>
+                                    <li>海南金煌芒</li>
+                                    <li>南鹿荔枝</li>
+                                    <li>南鹿红心火龙果</li>
+                                </ul>
+                                <ul class="indexList"><!-- 图片右下角序号部分 -->
+                                    <li class="indexOn">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="padd-top"></p>
+                </div>
+                <div class="col-md-4 new l_vdo">
+                     <h2>视频中心<span class="two-tit">&nbsp;video</span></h2>
+                    <!-- {foreach from=$getshowlistvideo name=getshowlistvide item=getshowlistvid} -->
+           				<a href="details.php?id={$getshowlistvid.id}"><img src="{$getshowlistvid.image}" /></a>
+           			<!-- {/foreach} -->
+                </div>
+                <div class="col-md-4 quick link">
+                     <h2>友情链接 <span class="two-tit"> link </span></h2>
+                     <!-- {if $link} -->
+                    <div class="wrap">
+                      <!-- {foreach from=$link name=link item=link} -->
+                      <a href="{$link.link_url}" target="_blank" class="col-md-6">{$link.link_name}</a>
+                      <!-- {/foreach} -->
+                     </div>
+                    </div>
+                    <!-- {/if} -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file="inc/footer.tpl"}
+    {literal}
+    <script>    
+        //关闭click.bs.dropdown.data-api事件，使顶级菜单可点击
+        $(document).off('click.bs.dropdown.data-api');
+        //自动展开
+        $('.nav .dropdown').mouseenter(function(){
+         $(this).addClass('open');
+        });
+        //自动关闭
+        $('.nav .dropdown').mouseleave(function(){
+         $(this).removeClass('open');
+        });
+    </script>
+<script type="text/javascript">
+
+    $(window).load(function() {
+
+        $("#flexiselDemo3").flexisel({
+
+            visibleItems: 4,//一行显示的个数
+            animationSpeed: 1000,//动画时间
+            autoPlay: false,//是否自动播放
+            autoPlaySpeed: 3000, //播放时间间隔
+            pauseOnHover: true,//鼠标悬浮是否停止播放
+            enableResponsiveBreakpoints: true,//是否开启响应式
+            responsiveBreakpoints: {
+                portrait: { //项目名，可随意命名
+                    changePoint:480,//屏幕最大像素，意思为当屏幕最大像素为480时，只显示一个Item，即例子只显示一张图片。
+                    visibleItems: 1 //只显示一个Item，下面的相同
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 3
+                }
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    var curIndex = 0, //当前index
+            imgLen = $(".imgList li").length; //图片总数
+    // 定时器自动变换2.5秒每次
+    var autoChange = setInterval(function(){
+        if(curIndex < imgLen-1){
+            curIndex ++;
+        }else{
+            curIndex = 0;
+        }
+        //调用变换处理函数
+        changeTo(curIndex);
+    },2500);
+    //左箭头滑入滑出事件处理
+    $("#prev").hover(function(){
+        //滑入清除定时器
+        clearInterval(autoChange);
+    },function(){
+        //滑出则重置定时器
+        autoChangeAgain();
+    });
+    //左箭头点击处理
+    $("#prev").click(function(){
+        //根据curIndex进行上一个图片处理
+        curIndex = (curIndex > 0) ? (--curIndex) : (imgLen - 1);
+        changeTo(curIndex);
+    });
+    //右箭头滑入滑出事件处理
+    $("#next").hover(function(){
+        //滑入清除定时器
+        clearInterval(autoChange);
+    },function(){
+        //滑出则重置定时器
+        autoChangeAgain();
+    });
+    //右箭头点击处理
+    $("#next").click(function(){
+        curIndex = (curIndex < imgLen - 1) ? (++curIndex) : 0;
+        changeTo(curIndex);
+    });
+    //对右下角按钮index进行事件绑定处理等
+    $(".indexList").find("li").each(function(item){
+        $(this).hover(function(){
+            clearInterval(autoChange);
+            changeTo(item);
+            curIndex = item;
+        },function(){
+            autoChangeAgain();
+        });
+    });
+    //清除定时器时候的重置定时器--封装
+    function autoChangeAgain(){
+        autoChange = setInterval(function(){
+            if(curIndex < imgLen-1){
+                curIndex ++;
+            }else{
+                curIndex = 0;
+            }
+            //调用变换处理函数
+            changeTo(curIndex);
+        },2500);
+    }
+    function changeTo(num){
+        var goLeft = num * 367;
+        $(".imgList").animate({left: "-" + goLeft + "px"},500);
+        $(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
+        $(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
+    }
+</script>
+{/literal}
+</body>
+</html>
+
+
+

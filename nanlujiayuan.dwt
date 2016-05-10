@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{$page.page_name}</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/head.css"/>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+{include file="inc/header.tpl"}
+<div class="abo-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>目前您在:首页>关于南鹿>{$page.page_name}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2  col-xs-12">
+            <h3>公司概况</h3>
+            <ul class="abo-left col-md-12 col-xs-6">
+                <li><a href="nanlujianjie.php">南鹿简介</a></li>
+                <li><a href="fazhanlicheng.php">发展历程</a></li>
+                <li><a href="qiyewenhua.php">企业文化</a></li>
+                <li><a href="zuzhijiagou.php">组织构架</a></li>
+                <li><a href="qiyerongyu.php">企业荣誉</a></li>
+                <li><a href="rencaizhaoping.php">人才招聘</a></li>
+                <li class="abo-li"><span>•</span><a href="nanlujiayuan.php">南鹿家园</a></li>
+            </ul>
+            <div class="col-md-12 col-xs-6 cul-left">
+                <a href="xiaoshou.php?id=24"><img src="assets/img/cul1.png" alt=""/></a>
+                <a href="shuiguo.php"><img src="assets/img/cul2.png" alt=""/></a>
+                <a href="yanfajishu.php?id=27"><img src="assets/img/cul3.png" alt=""/></a>
+                <a href="https://shop110077439.taobao.com/"> <img src="assets/img/cul4.png" alt=""/></a>
+            </div>
+        </div>
+        <div class="col-md-9  col-xs-12 abo-top1 cul-top" align="center">
+             {$page.content}
+        </div>
+
+    </div>
+    {include file="inc/link.tpl"}
+</div>
+{include file="inc/footer.tpl"}
+{literal}
+<script>
+    //关闭click.bs.dropdown.data-api事件，使顶级菜单可点击
+    $(document).off('click.bs.dropdown.data-api');
+    //自动展开
+    $('.nav .dropdown').mouseenter(function(){
+        $(this).addClass('open');
+    });
+    //自动关闭
+    $('.nav .dropdown').mouseleave(function(){
+        $(this).removeClass('open');
+    });
+</script>
+{/literal}
+</body>
+</html>
